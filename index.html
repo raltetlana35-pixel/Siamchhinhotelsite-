@@ -10,41 +10,60 @@
       text-align: center;
       background: black;
     }
-
-    .hero {
-      height: 100vh;
-      background: url('https://images.unsplash.com/photo-1566073771259-6a8506099945') no-repeat center/cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
     }
 
-    .overlay {
-      background: rgba(0,0,0,0.6);
-      padding: 40px;
-      border-radius: 10px;
-    }
+   .hero {
+  height: 100vh;
+  background: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1566073771259-6a8506099945');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+   }
+    
+
+    .hero-content {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 90%;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
 
     h1 {
-      font-size: 36px;
-      color: gold;
-      margin-bottom: 10px;
+  font-size: 42px;
+  color: gold;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
     }
 
-    p {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
+p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
 
     button {
-      padding: 12px 25px;
-      font-size: 16px;
-      background: gold;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-    }
+  padding: 12px 25px;
+  font-size: 16px;
+  background: gold;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+}
 
     .section {
       padding: 40px 20px;
@@ -60,13 +79,28 @@
       background: #111;
       padding: 20px;
       border-radius: 10px;
+
+      .hero-content {
+  animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
     }
   </style>
 </head>
 <body>
 
   <div class="hero">
-    <div class="overlay">
+    <div class="hero-content">
       <h1>Seasons Hotel Lunglei</h1>
       <p>Luxury stay in the heart of Lunglei</p>
       <button>Book Now</button>
@@ -95,3 +129,4 @@
 
 </body>
 </html>
+
